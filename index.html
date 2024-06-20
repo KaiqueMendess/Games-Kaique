@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Game Dashboard</h1>
+            <input type="text" id="search" placeholder="Search games...">
+        </div>
+    </header>
+    <main>
+        <section id="recently-added">
+            <h2>Recently Added</h2>
+            <div class="game-grid" id="recently-added-games">
+                <!-- Recently added games will go here -->
+            </div>
+        </section>
+        <section id="leaving-soon">
+            <h2>Leaving Soon</h2>
+            <div class="game-grid" id="leaving-soon-games">
+                <!-- Games leaving soon will go here -->
+            </div>
+        </section>
+        <section id="categories">
+            <h2>Categories</h2>
+            <div class="category-buttons">
+                <button class="category" data-category="classic">Classic</button>
+                <button class="category" data-category="indie">Indie</button>
+                <button class="category" data-category="family-friendly">Family Friendly</button>
+                <button class="category" data-category="sports-racing">Sports & Racing</button>
+                <button class="category" data-category="shooters">Shooters</button>
+                <button class="category" data-category="action-adventure">Action & Adventure</button>
+                <button class="category" data-category="platformers">Platformers</button>
+                <button class="category" data-category="fighters-brawlers">Fighters & Brawlers</button>
+            </div>
+            <div class="game-grid" id="all-games">
+                <!-- All games will go here -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
