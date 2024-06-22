@@ -33,7 +33,7 @@ Além disso, há uma funcionalidade de busca para facilitar a descoberta de jogo
 - Filtragem por categorias de jogos.
 - Busca rápida por título de jogo.
 - Efeitos visuais de hover para destacar jogos na interface.
-
+```plaintext
 ## Estrutura do Projeto
 
 game-dashboard/
@@ -62,7 +62,7 @@ game-dashboard/
 │
 └── SNAKE-GAME/
 └── index.html (Página do jogo "Snake Game")
-
+```
 ## Como Usar
 
 1. Clone este repositório em seu ambiente local.
