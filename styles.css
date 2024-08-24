@@ -1,104 +1,503 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
+
+body { background: black}
+
+* { font-family: Arial; }
+/* o preenchimento não deve afetar a largura do elemento, esta também é a configuração padrão da grade CSS */
+*, *:before, *:after { box-sizing: border-box }
+
+.noselect, .no-select {
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Old versions of Firefox */
+ -ms-user-select: none; /* Internet Explorer/Edge */
+     user-select: none; /* Non-prefixed version, currently
+                           supported by Chrome, Edge, Opera and Firefox */
+}
+
+.rel { position: relative }
+.abs { position: absolute }
+.top { top: 0 }
+.left { left: 0 }
+.right { right: 0 }
+.bottom { bottom: 0 }
+
+/* vertical and horizontal align */
+.f { display: flex; }
+.v { align-items: center }
+.vs { align-items: flex-start }
+.ve { align-items: flex-end }
+.h { justify-content: center }
+.hs { justify-content: flex-start }
+.he { justify-content: flex-end }
+.r { flex-direction: row }
+.rr { flex-direction: row-reverse }
+.c { flex-direction: column }
+.cr { flex-direction: column-reverse }
+.s { justify-content: space-around }
+
+.zero-padding { padding: 0 }
+.o { padding: 5px }
+.p { padding: 10px }
+.pp { padding: 20px }
+.ppp { padding: 30px }
+.pppp { padding: 50px }
+.ppppp { padding: 100px }
+
+.m { margin: 5px }
+.mm { margin: 10px }
+.mmm { margin: 20px }
+.mmmm { margin: 30px }
+
+.lm { margin-left: 8px }
+.lmm { margin-left: 16px }
+.b { font-size: 28px }
+
+.off-0 { margin-left: 0 }
+.off-1 { margin-left: calc(74px * -1) }
+.off-2 { margin-left: calc(74px * -2) }
+.off-3 { margin-left: calc(74px * -3) }
+.off-4 { margin-left: calc(74px * -4) }
+.off-5 { margin-left: calc(74px * -5) }
+.off-6 { margin-left: calc(74px * -6) }
+.off-7 { margin-left: calc(74px * -7) }
+.off-8 { margin-left: calc(74px * -8) }
+
+#select-user-container { transition: 300ms; }
+#select-user-container.off-0 { margin-left: calc(450px * 1) }
+#select-user-container.off-1 { margin-left: calc(450px * 0) }
+#select-user-container.off-2 { margin-left: calc(450px *-1) }
+
+.disappear {
+ opacity: 0 !important;
+ transform: scale(1.5) !important;
+}
+
+.user-circle {
+ transition: 200ms;
+ transform: scale( 0.9 );
+ opacity: 0.5;
+}
+
+#select-user-container .current .user-circle {
+ transform: scale( 1.2 );
+ opacity: 1;
+}
+
+#ps5 {
+  position: relative;
+  overflow: hidden;
+}
+
+#primary {
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  width: 1000px;
+  height: 64px;
+  transition: 600ms !important;
+  transition-timing-function: ease;
+}
+
+#primary.faster,
+.faster {
+  transition: 200ms !important;
+}
+
+#primary.hidden {
+  left: 1200px;
+}
+
+#primary.up {
+  top: 75px;
+}
+
+.sel {
+ position: relative;
+ width: 100px;
+ height: 100px;
+ margin: 3.5px;
+ border: 2px solid #1f1f1f;
+ border-radius: 8px;
+ cursor: pointer;
+ transition: 400ms;
+ transform-style: preserve-3d;
+ z-index: 3;
+}
+
+.sel.current {
+ width: 120px;
+ height: 120px;
+}
+
+div .under {
+ content:'';
+ position: absolute;
+ width: calc(100% + 8px);
+ height: calc(100% + 8px);
+ margin: -4px -4px;
+ background: #1f1f1f;
+ transform: translateZ(-2px);
+ border-radius: 8px;
+ z-index: 1;
+}
+
+div .lightwave-container {
+ position: relative;
+ width: 100%;
+ height: 100%;
+ transition: 400ms;
+ background: black;
+ transform: translateZ(-1px);
+ z-index: 2;
+ overflow: hidden;
+}
+
+div .lightwave {
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 500%;
+ height: 500%;
+ /*background: radial-gradient(circle at 10% 10%, rgba(72,72,72,1) 0%, rgba(0,0,0,1) 100%);*/
+ filter: blur(10px);
+ transform: translateZ(-1px);
+ z-index: 2;
+ overflow: hidden;
+}
+
+.game { border-radius: 8px; }
+.game .lightwave-container {
+ transform: scale(0.98);
+ width: 100%;
+ height: 100%;
+ border-radius: 8px;
+}
+
+
+/* min dimensions for any object */
+.min {
+  width: 60px;
+  height: 60px;
+}
+
+/* images */
+.t { background: transparent url(https://semicolon.dev/static/ps5-ic-bag.png) no-repeat; background-position: center center; z-index: 1; position: relative;}
+.b { background: transparent url(https://semicolon.dev/static/ps5-ic-rocket.png) no-repeat; background-position: center center; }
+.a { background: transparent url(https://semicolon.dev/static/ps5-ic-cross.png) no-repeat; background-position: center center; }
+.ss { background: transparent url(https://semicolon.dev/static/ps5-ic-ps.png) no-repeat; background-position: center center; }
+.sm { background: transparent url(https://semicolon.dev/static/spiderman-ic.png) no-repeat; background-position: center center; }
+.d { background: transparent url(https://semicolon.dev/static/ps5-ic-contr.png) no-repeat; background-position: center center; }
+.e { background: transparent url(https://semicolon.dev/static/ps5-ic-photo.png) no-repeat; background-position: center center; }
+
+.status-joystick { background:url(https://semicolon.dev/static/status-joystick.png) no-repeat; background-position: center center; }
+.status-battery { background:url(https://semicolon.dev/static/status-battery.png) no-repeat; background-position: center center; }
+
+/* Global settings for the page */
+html, body {
     margin: 0;
-    background-color: #121212;
-    color: #ffffff;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    color: white;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #202020;
-    padding: 10px 20px;
+/* Tab styles */
+#tab {
+    position: absolute;
+    top: 7px;
+    left: 24px;
+    color: #999999;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #202020;
-    padding: 10px 20px;
-}
-
-.navbar h1 {
-    margin: 0;
+#tab div {
+    padding: 12px 24px;
     font-size: 24px;
 }
 
-.navbar input {
-    padding: 5px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+#tab div.on {
+    font-weight: bold;
+    color: white;
 }
 
-.navbar input:focus {
-    outline: none;
-    box-shadow: 0 0 10px #00bfff;
+/* PS5 container */
+#ps5 {
+    width: 100vw;
+    height: 100vh;
+    background: url('https://semicolon.dev/static/playstation_5_teaser_v2.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Includes padding and border in element's dimensions */
 }
 
-main {
-    padding: 20px;
+/* Menu styles */
+.menu {
+    z-index: 10;
 }
 
-h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+#ps5 section.menu {
+    opacity: 0;
+    transition: 400ms;
+}
+
+#ps5 section.menu.current {
+    display: flex;
+    opacity: 1;
+}
+
+/* Section styles inherit width and height from parent #ps5 */
+#main, #system, #selectuser {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+#main { z-index: 100; }
+#selectuser { z-index: 200; }
+#system { z-index: 300; }
+
+#selectuser .header { font-size: 21px; }
+#selectuser .subtext { font-size: 16px; color: gray; }
+
+/* Start button styles */
+#start {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: url(https://semicolon.dev/static/PS5-START-BUTTON.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: 400ms;
+    z-index: 100000;
+}
+
+#start:hover {
+    transform: scale(1.1);
+}
+
+/* PS5 button press styles */
+#press-ps-button {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    color: white;
     font-size: 20px;
 }
 
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    transition: all 0.5s ease;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+/* Backgrounds and overlays */
+#background-1, #background-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    background-position: center center;
+    background-size: cover;
+    pointer-events: none;
+    transition: 100ms;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(1.0);
+    /* filter: blur(5px); */
 }
 
-.game-card {
-    background-color: #333333;
-    padding: 10px;
+.fade-in {
+    opacity: 0.75 !important;
+    transform: scale(1.1) !important;
+    filter: blur(0) !important;
+    z-index: 1;
+}
+
+#background-2 {
+    background-image: url(https://semicolon.dev/static/playstation_5_teaser_v2.jpg);
+}
+
+/* Spacing */
+#space-filler-100 {
+    height: 100px;
+}
+
+#space-filler {
+    height: 200px;
+}
+
+/* Start button circles */
+#start {
+    transform: translateZ(-1px);
+}
+
+#start-circle-1, #start-circle-2 {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: transparent;
+    border: 10px solid white;
+    transform: translateZ(-2px);
+    transition: 1200ms;
+    opacity: 2;
+}
+
+#start-circle-2 {
+    transition: 600ms;
+}
+
+#start-circle-1.play-a {
+    transform: translateZ(-2px) scale(4);
+    border: 3px solid white;
+    filter: blur(1px);
+    opacity: 0.5;
+}
+
+#start-circle-1.play-b {
+    transform: translateZ(-2px) scale(8);
+    filter: blur(5px);
+    opacity: 0;
+}
+
+#start-circle-2.play-c {
+    transform: translateZ(-2px) scale(3);
+    border: 2px solid white;
+    /* filter: blur(1px); */
+}
+
+#start-circle-2.play-d {
+    transform: translateZ(-2px) scale(8);
+    opacity: 0;
+}
+
+/* Game browser styles */
+#game-browser {
+    position: absolute;
+    top: 300px;
+    left: 60px;
+    transition: 200ms;
+}
+
+#game-browser.y-0 { margin-top: 0 !important; }
+#game-browser.y-1 { margin-top: calc(230px * -1) !important; }
+#game-browser.y-2 { margin-top: calc(230px * -2) !important; }
+#game-browser.y-3 { margin-top: calc(230px * -3) !important; }
+
+/* Game tile styles */
+.game {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 230px;
+    height: 230px;
+    margin: 2px;
+}
+
+.game .under {
     border-radius: 8px;
+}
+
+.game .image {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 220px;
+    height: 220px;
+    z-index: 2;
+    transition: 400ms;
+    opacity: 0.5 !important;
+}
+
+.game.current .image {
+    opacity: 1 !important;
+}
+
+/* Background images for each game */
+.game:nth-child(1) .image { background: url('https://semicolon.dev/static/game0.png') no-repeat; background-size: cover; }
+.game:nth-child(2) .image { background: url('https://semicolon.dev/static/game1.png') no-repeat; background-size: cover; }
+.game:nth-child(3) .image { background: url('https://semicolon.dev/static/game2.png') no-repeat; background-size: cover; }
+.game:nth-child(4) .image { background: url('https://semicolon.dev/static/game3.png') no-repeat; background-size: cover; }
+.game:nth-child(5) .image { background: url('https://semicolon.dev/static/game4.png') no-repeat; background-size: cover; }
+.game:nth-child(6) .image { background: url('https://semicolon.dev/static/game5.png') no-repeat; background-size: cover; }
+.game:nth-child(7) .image { background: url('https://semicolon.dev/static/game6.png') no-repeat; background-size: cover; }
+.game:nth-child(8) .image { background: url('https://semicolon.dev/static/game7.png') no-repeat; background-size: cover; }
+.game:nth-child(9) .image { background: url('https://semicolon.dev/static/game8.png') no-repeat; background-size: cover; }
+.game:nth-child(10) .image { background: url('https://semicolon.dev/static/game9.png') no-repeat; background-size: cover; }
+.game:nth-child(11) .image { background: url('https://semicolon.dev/static/game10.png') no-repeat; background-size: cover; }
+.game:nth-child(12) .image { background: url('https://semicolon.dev/static/game11.png') no-repeat; background-size: cover; }
+.game:nth-child(13) .image { background: url('https://semicolon.dev/static/game12.png') no-repeat; background-size: cover; }
+.game:nth-child(14) .image { background: url('https://semicolon.dev/static/game13.png') no-repeat; background-size: cover; }
+.game:nth-child(15) .image { background: url('https://semicolon.dev/static/game14.png') no-repeat; background-size: cover; }
+.game:nth-child(16) .image { background: url('https://semicolon.dev/static/game15.png') no-repeat; background-size: cover; }
+
+/* User profile styles */
+.user-container {
+    width: 175px;
+    height: 175px;
+    display: block;
+    position: relative;
+    margin: 25px;
+    margin-bottom: 75px;
+}
+
+.user-container .user-circle {
+    width: 150px;
+    height: 150px;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+}
+
+.user-box {
+    width: 175px;
+    height: 175px;
+}
+
+.user-des {
+    display: block;
+    position: relative;
+    width: 175px;
+    height: 50px;
     text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 16px;
+    color: gray;
+    font-size: 20px;
 }
 
-.game-card:hover {
-    transform: scale(1.05);
-    background-color: #444444;
+#current-time {
+    font-size: 19px;
+    color: white;
+    position: fixed;
+    top: 35px;
+    right: 25px;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.game-card img {
-    max-width: 100%;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+
+/* User options */
+#select-user-options {
+    font-size: 15px;
 }
 
-.game-card img:hover {
-    box-shadow: 0 0 10px #00bfff;
+/* User profile backgrounds */
+.user-0 {
+    background-color: rgba(100, 100, 100, 0.25);
+    background-image: url(https://semicolon.dev/static/cross.png);
+    background-position: center center;
 }
 
-.category-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+.user-1 {
+    background-color: rgba(100, 100, 100, 0.25);
+    background-image: url(https://avatars.githubusercontent.com/u/84601420?v=4);
+    background-position: center center;
+    background-size: 100%;
 }
 
-.category {
-    padding: 10px 20px;
-    background-color: #444444;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.category:hover {
-    background-color: #555555;
-    transform: scale(1.1);
+.user-2 {
+    background-color: rgba(100, 100, 100, 0.25);
+    background-image: url(https://semicolon.dev/static/ghost.png);
+    background-position: center center;
 }

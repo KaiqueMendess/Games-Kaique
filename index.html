@@ -2,47 +2,238 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Arquivo de redefinição inicial HTML">
+    <meta name="keywords" content="html, css, events, mouse, keyboard, mobile first, media queries">
+    <meta name="author" content="Kaique Mendes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Dashboard</title>
+    <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <h1>Game Dashboard</h1>
-            <input type="text" id="search" placeholder="Search games...">
-        </div>
-    </header>
-    <main>
-        <section id="recently-added">
-            <h2>Recently Added</h2>
-            <div class="game-grid" id="recently-added-games">
-                <!-- Recently added games will go here -->
+
+    <!-- Estrutura principal do aplicativo -->
+    <section id="ps5" class="rel" style="z-index: 10">
+
+        <!-- Seções de fundo -->
+        <section id="background-1" class="nextBackground"></section>
+        <section id="background-2" class="currentBackground fade-in"></section>
+
+        <!-- Menu do sistema -->
+        <section id="system" class="menu f v h c s">
+            <div id="press-ps-button" class="f v h">Pressione o botão PS no seu Controle.</div>
+            <div id="start" class="f v h">
+                <div id="start-circle-1"></div>
+                <div id="start-circle-2"></div>
             </div>
+            <div id="space-filler" class="f v h"></div>
         </section>
-        <section id="leaving-soon">
-            <h2>Leaving Soon</h2>
-            <div class="game-grid" id="leaving-soon-games">
-                <!-- Games leaving soon will go here -->
-            </div>
+
+        <!-- Seleção de usuário -->
+        <section id="selectuser" class="menu none f v h c s">
+            <div id="space-filler-100" class="f v h"></div>
+            <div id="current-time"></div>
+            <section class="header">Seja Bem vindo(a) novamente ao PlayStation</section>
+            <section class="subtext">Quem está usando esse controle?</section>
+            <section id="select-user-controller"></section>
+            <section id="select-user-container" class="f v h r">
+                <section class="user-container f v h c">
+                    <section id="user-0" class="user-box f v h">
+                        <section class="user-circle user-0"></section>
+                    </section>
+                    <section class="user-des">Adicionar usuário</section>
+                </section>
+                <section class="user-container f v h c">
+                    <section id="user-1" class="current user-box f v h">
+                        <section class="user-circle user-1"></section>
+                    </section>
+                    <section class="user-des">Kaique Mendes</section>
+                </section>
+                <section class="user-container f v h c">
+                    <section id="user-2" class="user-box f v h">
+                        <section class="user-circle user-2"></section>
+                    </section>
+                    <section class="user-des">Outro Usuário</section>
+                </section>
+            </section>
+            <section id="select-user-options">
+                <img src="https://semicolon.dev/static/playstation5-options-ui.png" 
+                     style="vertical-align: middle; margin-top: -2px; margin-right: 10px;" 
+                     alt="PS5 options" /> 
+                Options
+            </section>
+            <div id="space-filler-100" class="f v h"></div>
         </section>
-        <section id="categories">
-            <h2>Categories</h2>
-            <div class="category-buttons">
-                <button class="category" data-category="classic">Classic</button>
-                <button class="category" data-category="indie">Indie</button>
-                <button class="category" data-category="family-friendly">Family Friendly</button>
-                <button class="category" data-category="sports-racing">Sports & Racing</button>
-                <button class="category" data-category="shooters">Shooters</button>
-                <button class="category" data-category="action-adventure">Action & Adventure</button>
-                <button class="category" data-category="platformers">Platformers</button>
-                <button class="category" data-category="fighters-brawlers">Fighters & Brawlers</button>
-            </div>
-            <div class="game-grid" id="all-games">
-                <!-- All games will go here -->
-            </div>
+
+        <!-- Menu principal -->
+        <section id="main" class="menu f v h">
+            <!-- Abas -->
+            <section id="tab" class="f">
+                <div class="on">Games</div>
+                <div>Media</div>
+            </section>
+
+            <!-- Opções primárias  -->
+            <section id="primary" class="menu none hidden f">
+                <div id="o0" data-id="0" class="sel t">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o1" data-id="1" class="sel b">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o2" data-id="2" class="sel sm">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o3" data-id="3" class="sel a">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o4" data-id="4" class="sel ss">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o5" data-id="5" class="sel d">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o6" data-id="6" class="sel e">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o7" data-id="7" class="sel">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o8" data-id="8" class="sel">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+                <div id="o9" data-id="9" class="sel">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navegador de jogos -->
+            <section id="game-browser">
+                <!-- Jogos -->
+                <div class="game" data-id="game-0-0">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-1-0">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-2-0">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-3-0">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-0-1">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-1-1">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-2-1">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-3-1">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-0-2">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-1-2">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-2-2">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+                <div class="game" data-id="game-3-2">
+                    <div class="under"></div>
+                    <div class="lightwave-container">
+                        <div class="lightwave"></div>
+                    </div>
+                    <div class="image"></div>
+                </div>
+            </section>
         </section>
-    </main>
-    <script src="script.js"></script>
+
+        <!-- Status do joystick e bateria -->
+        <section id="status" class="f s abs top right current">
+            <div id="status-joystick" class="min rel"></div>
+            <div id="status-battery" class="min rel"></div>
+        </section>
+
+    </section>
+
 </body>
 </html>
