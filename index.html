@@ -12,6 +12,14 @@
 </head>
 <body>
 
+    <div id="intro-video-container">
+        <video id="intro-video" autoplay muted>
+            <source src="intro.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+    
+
     <!-- Estrutura principal do aplicativo -->
     <section id="ps5" class="rel" style="z-index: 10">
 
@@ -65,175 +73,62 @@
             <div id="space-filler-100" class="f v h"></div>
         </section>
 
-        <!-- Menu principal -->
-        <section id="main" class="menu f v h">
-            <!-- Abas -->
-            <section id="tab" class="f">
-                <div class="on">Games</div>
+        <section id = "main" class = "menu f v h">
+
+            <section id = "tab" class = "f">
+                <div class = "on">Games</div>
                 <div>Media</div>
             </section>
-
-            <!-- Opções primárias  -->
-            <section id="primary" class="menu none hidden f">
-                <div id="o0" data-id="0" class="sel t">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o1" data-id="1" class="sel b">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o2" data-id="2" class="sel sm">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o3" data-id="3" class="sel a">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o4" data-id="4" class="sel ss">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o5" data-id="5" class="sel d">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o6" data-id="6" class="sel e">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o7" data-id="7" class="sel">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o8" data-id="8" class="sel">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
-                <div id="o9" data-id="9" class="sel">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                </div>
+    
+            <section id = "primary" class = "menu none hidden f">
+                <div id = "o0" data-id = "0" class = "sel t"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o1" data-id = "1" class = "sel b"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o2" data-id = "2" class = "sel sm"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o3" data-id = "3" class = "sel a"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o4" data-id = "4" class = "sel ss"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o5" data-id = "5" class = "sel d"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o6" data-id = "6" class = "sel e"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o7" data-id = "7" class = "sel"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o8" data-id = "8" class = "sel"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
+                <div id = "o9" data-id = "9" class = "sel"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div></div>
             </section>
-
-            <!-- Navegador de jogos -->
-            <section id="game-browser">
-                <!-- Jogos -->
-                <div class="game" data-id="game-0-0">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-1-0">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-2-0">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-3-0">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-0-1">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-1-1">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-2-1">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-3-1">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-0-2">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-1-2">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-2-2">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
-                <div class="game" data-id="game-3-2">
-                    <div class="under"></div>
-                    <div class="lightwave-container">
-                        <div class="lightwave"></div>
-                    </div>
-                    <div class="image"></div>
-                </div>
+    
+            <section id = "oo"></section>
+    
+            <section id = "game-browser">
+    
+                <!-- games -->
+    
+                <div class = "game" data-id = "game-0-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-1-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-2-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-3-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+    
+                <div class = "game" data-id = "game-4-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-5-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-6-0"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-0-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+    
+                <div class = "game" data-id = "game-1-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-2-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-3-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-4-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+    
+                <div class = "game" data-id = "game-5-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-6-1"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-0-2"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+                <div class = "game" data-id = "game-1-2"><div class = "under"></div><div class = "lightwave-container"><div class = "lightwave"></div></div><div class = "image"></div></div>
+    
             </section>
+    
         </section>
-
-        <!-- Status do joystick e bateria -->
-        <section id="status" class="f s abs top right current">
-            <div id="status-joystick" class="min rel"></div>
-            <div id="status-battery" class="min rel"></div>
+    
+        <section id = "status" class = "f s abs top right current">
+            <div id = "status-joystick min rel"></div>
+            <div id = "status-battery min rel"></div>
         </section>
-
+    
     </section>
-
-</body>
-</html>
+    
+    </body>
+    </html>

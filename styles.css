@@ -182,13 +182,13 @@ div .lightwave {
 }
 
 /* images */
-.t { background: transparent url(https://semicolon.dev/static/ps5-ic-bag.png) no-repeat; background-position: center center; z-index: 1; position: relative;}
-.b { background: transparent url(https://semicolon.dev/static/ps5-ic-rocket.png) no-repeat; background-position: center center; }
-.a { background: transparent url(https://semicolon.dev/static/ps5-ic-cross.png) no-repeat; background-position: center center; }
-.ss { background: transparent url(https://semicolon.dev/static/ps5-ic-ps.png) no-repeat; background-position: center center; }
-.sm { background: transparent url(https://semicolon.dev/static/spiderman-ic.png) no-repeat; background-position: center center; }
-.d { background: transparent url(https://semicolon.dev/static/ps5-ic-contr.png) no-repeat; background-position: center center; }
-.e { background: transparent url(https://semicolon.dev/static/ps5-ic-photo.png) no-repeat; background-position: center center; }
+.t { background: transparent url(https://semicolon.dev/static/ps5-ic-bag.png) no-repeat;background-size: cover; z-index: 1; position: relative;}
+.b { background: transparent url(https://semicolon.dev/static/game6.png) no-repeat; background-size: cover; }
+.a { background: transparent url(https://semicolon.dev/static/ps5-ic-cross.png) no-repeat; background-size: cover; }
+.ss { background: transparent url(https://semicolon.dev/static/ps5-ic-ps.png) no-repeat; background-size: cover; }
+.sm { background: transparent url(https://semicolon.dev/static/game1.png) no-repeat; background-size: cover; }
+.d { background: transparent url(https://semicolon.dev/static/ps5-ic-contr.png) no-repeat; background-size: cover;}
+.e { background: transparent url(https://semicolon.dev/static/ps5-ic-photo.png) no-repeat; background-size: cover; }
 
 .status-joystick { background:url(https://semicolon.dev/static/status-joystick.png) no-repeat; background-position: center center; }
 .status-battery { background:url(https://semicolon.dev/static/status-battery.png) no-repeat; background-position: center center; }
@@ -224,7 +224,7 @@ html, body {
 #ps5 {
     width: 100vw;
     height: 100vh;
-    background: url('https://semicolon.dev/static/playstation_5_teaser_v2.jpg') no-repeat center center;
+    background: url('img/fundo.jogos/fundo.jpg') no-repeat center center;
     background-size: cover;
     overflow: hidden;
     margin: 0;
@@ -288,23 +288,21 @@ html, body {
     font-size: 20px;
 }
 
-/* Backgrounds and overlays */
-#background-1, #background-2 {
+#background-1{
     position: absolute;
     top: 0;
     left: 0;
-    width: inherit;
-    height: inherit;
-    background: transparent;
+    width: 100%;
+    height: 100%;
     background-position: center center;
     background-size: cover;
     pointer-events: none;
-    transition: 100ms;
+    transition: transform 100ms ease, background-image 0.5s ease-in-out;
     z-index: 0;
-    opacity: 0;
     transform: scale(1.0);
-    /* filter: blur(5px); */
+
 }
+
 
 .fade-in {
     opacity: 0.75 !important;
@@ -313,9 +311,7 @@ html, body {
     z-index: 1;
 }
 
-#background-2 {
-    background-image: url(https://semicolon.dev/static/playstation_5_teaser_v2.jpg);
-}
+
 
 /* Spacing */
 #space-filler-100 {
@@ -372,18 +368,28 @@ html, body {
     opacity: 0;
 }
 
-/* Game browser styles */
 #game-browser {
     position: absolute;
     top: 300px;
     left: 60px;
-    transition: 200ms;
+    transition: margin-top 200ms; /* Certifique-se de que a transição seja suave */
 }
 
 #game-browser.y-0 { margin-top: 0 !important; }
 #game-browser.y-1 { margin-top: calc(230px * -1) !important; }
 #game-browser.y-2 { margin-top: calc(230px * -2) !important; }
 #game-browser.y-3 { margin-top: calc(230px * -3) !important; }
+#game-browser.y-4 { margin-top: calc(230px * -4) !important; }
+#game-browser.y-5 { margin-top: calc(230px * -5) !important; }
+#game-browser.y-6 { margin-top: calc(230px * -6) !important; }
+#game-browser.y-7 { margin-top: calc(230px * -7) !important; }
+#game-browser.y-8 { margin-top: calc(230px * -8) !important; }
+#game-browser.y-9 { margin-top: calc(230px * -9) !important; }
+#game-browser.y-10 { margin-top: calc(230px * -10) !important; }
+#game-browser.y-11 { margin-top: calc(230px * -11) !important; }
+
+
+
 
 /* Game tile styles */
 .game {
@@ -415,7 +421,7 @@ html, body {
 }
 
 /* Background images for each game */
-.game:nth-child(1) .image { background: url('https://semicolon.dev/static/game0.png') no-repeat; background-size: cover; }
+.game:nth-child(1) .image { background: url('https://image.api.playstation.com/vulcan/img/rnd/202010/2319/XtqYrG2LWer39eExYBsh9J5x.png') no-repeat; background-size: cover; }
 .game:nth-child(2) .image { background: url('https://semicolon.dev/static/game1.png') no-repeat; background-size: cover; }
 .game:nth-child(3) .image { background: url('https://semicolon.dev/static/game2.png') no-repeat; background-size: cover; }
 .game:nth-child(4) .image { background: url('https://semicolon.dev/static/game3.png') no-repeat; background-size: cover; }
@@ -500,4 +506,31 @@ html, body {
     background-color: rgba(100, 100, 100, 0.25);
     background-image: url(https://semicolon.dev/static/ghost.png);
     background-position: center center;
+}
+
+
+.fade-in {
+    opacity: 0.75;
+}
+
+#intro-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-color: black;
+    transition: opacity 1s ease-out, visibility 0s linear 1s; /* Transição suave */
+}
+
+#intro-video-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
