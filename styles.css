@@ -111,60 +111,91 @@ body { background: black}
 #primary.up {
   top: 75px;
 }
-
+/* Estilo básico para os itens do menu */
 .sel {
- position: relative;
- width: 100px;
- height: 100px;
- margin: 3.5px;
- border: 2px solid #1f1f1f;
- border-radius: 8px;
- cursor: pointer;
- transition: 400ms;
- transform-style: preserve-3d;
- z-index: 3;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 3.5px;
+    border: 2px solid #1f1f1f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    z-index: 3;
 }
 
+/* Estilo para o item selecionado */
 .sel.current {
- width: 120px;
- height: 120px;
+    width: 120px; /* Aumenta o tamanho do item selecionado */
+    height: 120px; /* Aumenta o tamanho do item selecionado */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao item selecionado */
 }
 
-div .under {
- content:'';
- position: absolute;
- width: calc(100% + 8px);
- height: calc(100% + 8px);
- margin: -4px -4px;
- background: #1f1f1f;
- transform: translateZ(-2px);
- border-radius: 8px;
- z-index: 1;
+/* Estilo para a camada inferior do item */
+.sel .under {
+    content: '';
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    margin: -4px -4px;
+    background: #1f1f1f;
+    transform: translateZ(-2px);
+    border-radius: 8px;
+    z-index: 1;
 }
 
-div .lightwave-container {
- position: relative;
- width: 100%;
- height: 100%;
- transition: 400ms;
- background: black;
- transform: translateZ(-1px);
- z-index: 2;
- overflow: hidden;
+/* Estilo para a camada de efeito de luz */
+.sel .lightwave-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 400ms;
+    background: black;
+    transform: translateZ(-1px);
+    z-index: 2;
+    overflow: hidden;
 }
 
-div .lightwave {
- position: absolute;
- top: 0;
- right: 0;
- width: 500%;
- height: 500%;
- /*background: radial-gradient(circle at 10% 10%, rgba(72,72,72,1) 0%, rgba(0,0,0,1) 100%);*/
- filter: blur(10px);
- transform: translateZ(-1px);
- z-index: 2;
- overflow: hidden;
+/* Estilo para o efeito de luz */
+.sel .lightwave {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500%;
+    height: 500%;
+    filter: blur(10px);
+    transform: translateZ(-1px);
+    z-index: 2;
+    overflow: hidden;
 }
+
+/* Estilo para a informação do jogo */
+.game-info {
+    position: absolute;
+    bottom: -30px; /* Ajusta a posição para que o texto apareça abaixo da imagem */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 4; /* Coloca o texto na frente */
+    background: none; /* Remove qualquer fundo */
+}
+/* Estilo para o título do jogo */
+.game-title {
+    color: #fff; /* Cor branca */
+    font-size: 13px; /* Tamanho da fonte */
+    margin: 0;
+    padding: 0;
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Esconde o texto que ultrapassa a largura do contêiner */
+    text-overflow: ellipsis; /* Adiciona reticências (...) se o texto for muito longo */
+}
+
+/* Exibe a informação quando o item é selecionado */
+.sel.current .game-info {
+    opacity: 1;
+}
+
 
 .game { border-radius: 8px; }
 .game .lightwave-container {
@@ -182,17 +213,13 @@ div .lightwave {
 }
 
 /* images */
-.t { background: transparent url(https://semicolon.dev/static/ps5-ic-bag.png) no-repeat;background-size: cover; z-index: 1; position: relative;}
-.b { background: transparent url(https://semicolon.dev/static/game6.png) no-repeat; background-size: cover; }
-.a { background: transparent url(https://semicolon.dev/static/ps5-ic-cross.png) no-repeat; background-size: cover; }
+.t { background: transparent url(https://logodownload.org/wp-content/uploads/2018/09/playstation-store-logo-1.png) no-repeat;background-size: 70%; z-index: 1; background-position: center; }
+.b { background: transparent url(https://semicolon.dev/static/game6.png) no-repeat; background-size: cover; background-position: center;  }
+.a { background: transparent url(img/fundo.jogos/pspluslogo.png) no-repeat; background-size: 80%; background-position: center; }
 .ss { background: transparent url(https://semicolon.dev/static/ps5-ic-ps.png) no-repeat; background-size: cover; }
-.sm { background: transparent url(https://semicolon.dev/static/game1.png) no-repeat; background-size: cover; }
+.sm { background: transparent url(https://semicolon.dev/static/game1.png) no-repeat; background-size: cover;}
 .d { background: transparent url(https://semicolon.dev/static/ps5-ic-contr.png) no-repeat; background-size: cover;}
-.e { background: transparent url(https://semicolon.dev/static/ps5-ic-photo.png) no-repeat; background-size: cover; }
-
-.status-joystick { background:url(https://semicolon.dev/static/status-joystick.png) no-repeat; background-position: center center; }
-.status-battery { background:url(https://semicolon.dev/static/status-battery.png) no-repeat; background-position: center center; }
-
+.e { background: transparent url(img/fundo.jogos/biblioteca.png) no-repeat; background-size: cover; }
 /* Global settings for the page */
 html, body {
     margin: 0;
@@ -533,4 +560,151 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+
+/* Define a animação para a entrada na tela */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%); /* Começa fora da tela à direita */
+        opacity: 0; /* Começa invisível */
+    }
+    100% {
+        transform: translateX(0); /* Fica na posição final */
+        opacity: 1; /* Torna-se visível */
+    }
+}
+
+/* Define a animação para a saída da tela */
+@keyframes slideOut {
+    0% {
+        transform: translateX(0); /* Começa na posição final */
+        opacity: 1; /* Começa visível */
+    }
+    100% {
+        transform: translateX(100%); /* Sai da tela à direita */
+        opacity: 0; /* Torna-se invisível */
+    }
+}
+
+/* Contêiner da seção de status */
+.status-container {
+    position: absolute; /* Posiciona a seção com base no elemento pai */
+    top: 20px;          /* Espaçamento do topo */
+    right: 20px;        /* Espaçamento da direita */
+    display: flex;      /* Usa flexbox para alinhar os itens */
+    align-items: center;/* Alinha os itens verticalmente ao centro */
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro e semi-transparente */
+    padding: 10px;      /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    z-index: 1000;      /* Garante que a seção fique acima de outros elementos */
+    opacity: 0;        /* Começa invisível */
+    transform: translateX(100%); /* Começa fora da tela */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transição suave */
+}
+
+/* Classe que ativa a animação de entrada */
+.status-container.enter {
+    animation: slideIn 1s ease-in-out forwards; /* Aplica a animação de entrada */
+}
+
+/* Classe que ativa a animação de saída */
+.status-container.exit {
+    animation: slideOut 1s ease-in-out forwards; /* Aplica a animação de saída */
+}
+
+/* Estilo para o contêiner superior */
+#top-bar {
+    position: fixed; /* Fixa o topo da tela */
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    width: 100%;
+    background: transparent; /* Remove a cor de fundo */
+}
+
+/* Contêiner da imagem de perfil e status */
+#profile-container {
+    display: flex;
+    align-items: center;
+    margin-right: 40px; /* Aumenta o espaçamento à direita */
+}
+
+/* Imagem de perfil */
+#profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Faz a imagem redonda */
+    border: 2px solid #fff; /* Borda branca */
+}
+
+/* Indicador de status online */
+#status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #0f0; /* Verde para online */
+    border-radius: 50%;
+    margin-left: -7px; /* Espaçamento à esquerda da imagem */
+}
+
+/* Contêiner das configurações e pesquisa */
+#settings-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Empurra para o lado direito */
+    margin-right: 40px; /* Aumenta o espaçamento à direita */
+}
+
+/* Ícone de configurações */
+#settings-icon {
+    width: 40px;
+    height: 34px;
+    margin-right: 30px; /* Aumenta o espaçamento à direita */
+}
+
+/* Contêiner da pesquisa */
+#search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Ícone de pesquisa */
+#search-icon {
+    width: 40px;
+    height: 34px;
+    cursor: pointer;
+    margin-right: 20px; /* Aumenta o espaçamento à direita do ícone de pesquisa */
+}
+
+/* Campo de pesquisa */
+#search-input {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #555;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    display: none; /* Inicialmente escondido */
+}
+
+/* Mostra o campo de pesquisa ao clicar no ícone */
+#search-container.active #search-input {
+    display: block;
+}
+
+/* Estilo para o relógio */
+#clock-container {
+    color: #fff;
+    font-size: 24px;
+    margin-left: 120px; /* Aumenta o espaço entre a hora e os itens anteriores */
+    margin-top: 90px; /* Ajusta a margem superior para alinhar verticalmente */
+    position: relative;
+    top: 0px; /* Ajusta a posição vertical do relógio para alinhar com os outros itens */
 }

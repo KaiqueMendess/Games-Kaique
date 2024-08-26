@@ -37,7 +37,7 @@
                  [{title:"Photos",            background:"https://semicolon.dev/static/playstation_5_teaser_v2.jpg"}],
                  [{title:"Empty 1",           background:"https://semicolon.dev/static/playstation_5_teaser_v2.jpg"}],
                  [{title:"Empty 2",           background:"https://semicolon.dev/static/playstation_5_teaser_v2.jpg"}],
-                 [{title:"Empty 3",           background:"https://semicolon.dev/static/playstation_5_teaser_v2.jpg"}],]},
+                 [{title:"Biblioteca",        background:"img/fundo.jogos/biblioteca.png"}],]},
          selectuser: {
              name: `select-user`,
              subitems:
@@ -558,4 +558,46 @@ window.addEventListener('load', function() {
     introVideo.onended = function() {
         videoContainer.classList.add('hidden'); // Aplica a classe que faz o fade-out
     };
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const statusElement = document.querySelector('#status');
+    if (statusElement) {
+        // Adiciona a classe para animar a entrada
+        statusElement.classList.add('enter');
+
+        // Aguarda 5 segundos e então adiciona a classe para animar a saída
+        setTimeout(() => {
+            statusElement.classList.remove('enter'); // Remove a classe de entrada
+            statusElement.classList.add('exit'); // Adiciona a classe de saída
+        }, 5000); // 5000ms = 5 segundos
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // Atualiza a hora a cada segundo
+    function updateClock() {
+        const now = new Date();
+        
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        // Converte para o formato de 12 horas
+        hours = hours % 12;
+        hours = hours ? hours : 12; // A hora '0' deve ser '12'
+        hours = hours.toString().padStart(2, '0');
+        
+        const timeString = `${hours}:${minutes} ${ampm}`;
+        document.getElementById('current-time').textContent = timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // Atualiza a hora imediatamente
+
+    // Mostra/esconde o campo de pesquisa ao clicar na lupa
+    const searchIcon = document.getElementById('search-icon');
+    const searchContainer = document.getElementById('search-container');
+
+    searchIcon.addEventListener('click', () => {
+        searchContainer.classList.toggle('active');
+    });
 });
