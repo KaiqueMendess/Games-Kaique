@@ -214,8 +214,8 @@ body { background: black}
 
 /* images */
 .t { background: transparent url(https://logodownload.org/wp-content/uploads/2018/09/playstation-store-logo-1.png) no-repeat;background-size: 70%; z-index: 1; background-position: center; }
-.b { background: transparent url(https://semicolon.dev/static/game6.png) no-repeat; background-size: cover; background-position: center;  }
-.a { background: transparent url(img/fundo.jogos/pspluslogo.png) no-repeat; background-size: 80%; background-position: center; }
+.b { background: transparent url(img/fundo.jogos/pspluslogo.png) no-repeat; background-size: 80%; background-position: center;  }
+.a { background: transparent url(https://semicolon.dev/static/game6.png) no-repeat; background-size: 100%; background-position: center; }
 .ss { background: transparent url(https://semicolon.dev/static/ps5-ic-ps.png) no-repeat; background-size: cover; }
 .sm { background: transparent url(https://semicolon.dev/static/game1.png) no-repeat; background-size: cover;}
 .d { background: transparent url(https://semicolon.dev/static/ps5-ic-contr.png) no-repeat; background-size: cover;}
